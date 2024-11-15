@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 </style>
 
-    <script>
+<script>
         // Recuperar el tiempo restante de localStorage
         let tiempo = localStorage.getItem('tiempoRestante');
 

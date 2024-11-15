@@ -82,34 +82,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 </style>
 <script>
-    // Recuperar el tiempo restante de localStorage
-    let tiempo = localStorage.getItem('tiempoRestante');
+        // Recuperar el tiempo restante de localStorage
+        let tiempo = localStorage.getItem('tiempoRestante');
 
-    // Verifica si el temporizador está configurado
-    if (!tiempo) {
-        alert("Por favor, inicia el temporizador desde la página principal.");
-        window.location.href = 'index.php';
-    }
-
-    function actualizarTemporizador() {
-        const minutos = Math.floor(tiempo / 60);
-        const segundos = tiempo % 60;
-        document.getElementById('temporizador').innerText = 
-            minutos.toString().padStart(2, '0') + " : " + segundos.toString().padStart(2, '0');
-        
-        if (tiempo > 0) {
-            tiempo--;
-            localStorage.setItem('tiempoRestante', tiempo); // Guardar el tiempo restante
-        } else {
-            clearInterval(intervalo);
-            alert("¡El tiempo ha terminado!");
-            localStorage.removeItem('tiempoRestante'); // Quitar tiempo al finalizar
+        // Verifica si el temporizador está configurado
+        if (!tiempo) {
+            alert("Por favor, inicia el temporizador desde la página principal.");
+            window.location.href = 'index.php';
         }
-    }
 
-    const intervalo = setInterval(actualizarTemporizador, 1000);
-    actualizarTemporizador(); // Llamada inicial para mostrar el tiempo inmediatamente
-</script>
+        function actualizarTemporizador() {
+            const minutos = Math.floor(tiempo / 60);
+            const segundos = tiempo % 60;
+            document.getElementById('temporizador').innerText = 
+                ${minutos.toString().padStart(2, '0')} : ${segundos.toString().padStart(2, '0')};
+            
+            if (tiempo > 0) {
+                tiempo--;
+                localStorage.setItem('tiempoRestante', tiempo); // Guardar el tiempo restante
+            } else {
+                clearInterval(intervalo);
+                alert("¡El tiempo ha terminado!");
+                localStorage.removeItem('tiempoRestante'); // Quitar tiempo al finalizar
+            }
+        }
+
+        const intervalo = setInterval(actualizarTemporizador, 1000);
+        actualizarTemporizador(); // Llamada inicial para mostrar el tiempo inmediatamente
+    </script>
 <body>
 
 <div class="container-fluid">
