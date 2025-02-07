@@ -1,0 +1,14 @@
+{
+  "name": "phaser-game",
+  "version": "1.0.0",
+  "description": "Un juego simple creado con Phaser 3 que incluye dos personajes y mecánicas de disparo.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "dependencies": {
+    "phaser": "^3.55.2"
+  },
+  "author": "Tu Nombre",
+  "license": "MIT"
+}
